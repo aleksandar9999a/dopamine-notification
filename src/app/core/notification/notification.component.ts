@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { INotification } from 'src/app/interfaces/notification.interface';
 
 @Component({
   selector: 'app-notification',
@@ -6,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./notification.component.css']
 })
 export class NotificationComponent implements OnInit {
-
+  @Input() data: INotification;
+  
   constructor() { }
 
   ngOnInit(): void {
