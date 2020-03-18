@@ -1,14 +1,12 @@
-<div class="notification">
-    <div class="image">
-        <img src="https://www.freeiconspng.com/uploads/leistungen-promotion-icon-png-0.png" class="img-inside"/>
+<div class="notification" (click)="remove()">
+    <div class="image" *ngIf="data.image">
+        <img [src]="data.image" class="img-inside"/>
     </div>
     <div class="text">
-        Test test Test test Test test Test test
+        <p>{{data.title}}</p>
+        <p *ngIf="data.text">{{data.text}}</p>
     </div>
     <div class="time">
-        14:05
-    </div>
-    <div class="remove">
-        X
+        {{data.time.seconds * 1000 | date:'hh:mm a' }}
     </div>
 </div>
