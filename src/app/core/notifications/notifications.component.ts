@@ -1,7 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { fade } from './notifications.animations';
 import { MenuService } from '../services/menu.service';
-import { Subscription } from 'rxjs';
+import { Subscription, Observable } from 'rxjs';
+import { INotification } from 'src/app/interfaces/notification.interface';
 
 @Component({
   selector: 'app-notifications',
@@ -12,6 +13,7 @@ import { Subscription } from 'rxjs';
 export class NotificationsComponent implements OnInit, OnDestroy {
   isOpen = false;
   subscriber: Subscription;
+  notifications: Observable<Array<INotification>>;
 
   constructor(private menuService: MenuService) { }
 
