@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { fade } from './notifications.animations';
 import { MenuService } from '../services/menu.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-notifications',
@@ -8,13 +9,22 @@ import { MenuService } from '../services/menu.service';
   styleUrls: ['./notifications.component.css'],
   animations: [fade]
 })
-export class NotificationsComponent implements OnInit {
+export class NotificationsComponent implements OnInit, OnDestroy {
   isOpen = false;
+  subscriber: Subscription;
 
   constructor(private menuService: MenuService) { }
 
+  private changeState(state: boolean) {
+    this.isOpen = state;
+  }
+
   ngOnInit(): void {
-    this.menuService.state.subscribe((newState: boolean) => this.isOpen = newState);
+    this.subscriber = this.menuService.state.subscribe(this.changeState.bind(this));
+  }
+
+  ngOnDestroy(): void {
+    this.subscriber.unsubscribe();
   }
 
 }
