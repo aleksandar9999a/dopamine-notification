@@ -4,4 +4,37 @@
     background-color: rgb(255, 255, 255);
     box-shadow: 10px 7px 15px rgb(177, 177, 177);
     border-radius: 5px;
+    display: flex;
+}
+
+.image {
+    height: inherit;
+    width: 20%;
+    display: flex;
+}
+
+.img-inside {
+    height: 80%;
+    margin: auto;
+}
+
+.text {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+.time {
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.remove {
+    margin-left: 25px;
+    margin-right: 5px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 10%;
 }
