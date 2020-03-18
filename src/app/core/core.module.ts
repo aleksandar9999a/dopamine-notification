@@ -2,11 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavigationComponent } from './navigation/navigation.component';
 import { NotificationsComponent } from './notifications/notifications.component';
+import { NotificationComponent } from './notification/notification.component';
 
 
 
 @NgModule({
-  declarations: [NavigationComponent, NotificationsComponent],
+  declarations: [NavigationComponent, NotificationsComponent, NotificationComponent],
   imports: [
     CommonModule
   ],
