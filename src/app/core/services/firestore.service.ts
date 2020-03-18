@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import 'firebase/firestore';
 import { INotification } from 'src/app/interfaces/notification.interface';
 
 @Injectable()
@@ -13,7 +14,7 @@ export class FirestoreService {
     }
 
     getNotifications() {
-        return this.collection;
+        return this.collection.valueChanges();
     }
 
     deleteDoc(id: string) {
