@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 import { AppComponent } from './app.component';
 import { Core } from './core/core.module';
@@ -10,6 +12,7 @@ import { Core } from './core/core.module';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     Core
   ],
   providers: [],
