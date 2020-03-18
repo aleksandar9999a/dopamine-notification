@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuService } from '../services/menu.service';
 
 @Component({
   selector: 'app-navigation',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private menuService: MenuService) { }
+
+  toggle() {
+    return this.menuService.toggle();
+  }
 
   ngOnInit(): void {
   }
