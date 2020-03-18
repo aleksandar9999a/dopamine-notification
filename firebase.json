@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "dopamine-notification",
+      "public": "dist/dopamine-notification",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

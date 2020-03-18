@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "dopamine-notifications": {
+      "hosting": {
+        "dopamine-notification": [
+          "dopamine-notifications"
+        ]
+      }
+    }
+  }
+}
