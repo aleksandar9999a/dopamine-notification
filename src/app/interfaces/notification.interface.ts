@@ -1,11 +1,11 @@
 export interface INotification {
-    id: string,
+    id?: string,
     type: string,
-    image: string,
+    image?: string,
     title: string,
     text?: string,
     time?: object,
-    expires?: string,
+    expires?: number,
     link?: string,
     requirement?: string
 }
