@@ -2,13 +2,19 @@
     min-height: 500px;
 }
 
+.notifications{
+    width: 100%;
+}
+
 .action-btn {
     position: absolute;
-    display: flex;
-    height: 500px;
+    display: grid;
+    height: 700px;
     width: 100%;
 }
 
 .bottom {
+    width: 100%;
     margin: auto auto 0 auto;
+    text-align: center;
 }
