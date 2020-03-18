@@ -1,0 +1,14 @@
+.root {
+    min-height: 500px;
+}
+
+.action-btn {
+    position: absolute;
+    display: flex;
+    height: 500px;
+    width: 100%;
+}
+
+.bottom {
+    margin: auto auto 0 auto;
+}
