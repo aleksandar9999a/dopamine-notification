@@ -10,7 +10,7 @@ export class FirestoreService {
     constructor(
         private afs: AngularFirestore
     ) {
-        this.collection = afs.collection('notifications');
+        this.collection = afs.collection('notifications', ref => ref.orderBy('time', 'desc'));
     }
 
     getNotifications() {
