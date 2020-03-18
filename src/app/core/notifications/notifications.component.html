@@ -1,6 +1,5 @@
 <div class="notifications" @FadeEffect *ngIf="isOpen">
-    <app-notification></app-notification>
-    <app-notification></app-notification>
-    <app-notification></app-notification>
-    <app-notification></app-notification>
+    <div>
+        <app-notification *ngFor="let notification of notifications | async as list" [data]="notification"></app-notification>
+    </div>
 </div>
