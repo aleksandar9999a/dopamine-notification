@@ -5,6 +5,7 @@ import { NotificationsComponent } from './notifications/notifications.component'
 import { NotificationComponent } from './notification/notification.component';
 import { ActionsComponent } from './actions/actions.component';
 import { MenuService } from './services/menu.service';
+import { FirestoreService } from './services/firestore.service';
 
 
 
@@ -14,7 +15,8 @@ import { MenuService } from './services/menu.service';
     CommonModule
   ],
   providers: [
-    MenuService
+    MenuService,
+    FirestoreService
   ],
   exports: [NavigationComponent, NotificationsComponent, ActionsComponent]
 })
