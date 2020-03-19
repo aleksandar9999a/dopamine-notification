@@ -22,8 +22,8 @@ export class ActionsComponent implements OnInit {
       time
     })
   }
-
-  addBonusNotification() {
+  
+  addPromotionNotification() {
     const time = new Date();
     return this.fs.addDoc({
       type: 'Promotion',
@@ -34,7 +34,7 @@ export class ActionsComponent implements OnInit {
     })
   }
 
-  addPromotionNotification() {
+  addBonusNotification() {
     const time = new Date();
     return this.fs.addDoc({
       type: 'bonus',
