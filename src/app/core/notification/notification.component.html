@@ -5,6 +5,10 @@
     <div class="text">
         <p>{{data.title}}</p>
         <p *ngIf="data.text">{{data.text}}</p>
+        <p *ngIf="data.requirement">{{data.requirement}}</p>
+        <div *ngIf="data.link" class="link">
+            <a [href]="data.link" target="blank">Tap Here!</a>
+        </div>
     </div>
     <div class="time">
         {{data.time.seconds * 1000 | date:'hh:mm a' }}
