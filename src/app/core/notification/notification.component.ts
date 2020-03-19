@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { INotification } from 'src/app/interfaces/notification.interface';
 import { FirestoreService } from '../services/firestore.service';
 
@@ -7,8 +7,9 @@ import { FirestoreService } from '../services/firestore.service';
   templateUrl: './notification.component.html',
   styleUrls: ['./notification.component.css']
 })
-export class NotificationComponent implements OnInit {
+export class NotificationComponent implements OnInit, OnDestroy {
   @Input() data: INotification;
+  interval: NodeJS.Timeout;
 
   constructor(
     private fs: FirestoreService
@@ -20,10 +21,14 @@ export class NotificationComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.data.expires) {
-      setTimeout(() => {
+      this.interval = setTimeout(() => {
         this.fs.deleteDoc(this.data.id);
       }, this.data.expires)
     }
+  }
+
+  ngOnDestroy(): void {
+    clearInterval(this.interval);
   }
 
 }
