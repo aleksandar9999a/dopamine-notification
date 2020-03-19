@@ -4,7 +4,7 @@ export interface INotification {
     image?: string,
     title: string,
     text?: string,
-    time?: object,
+    time: object,
     expires?: number,
     link?: string,
     requirement?: string
