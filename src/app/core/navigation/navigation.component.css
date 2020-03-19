@@ -10,22 +10,28 @@
 
 .spacer {
     height: 70px;
-    width: 50px;
+    width: 180px;
 }
 
 .logo-div {
+    margin: auto;
+    display: flex;
+}
+
+.logo {
+    width: 70%;
     margin: auto;
 }
 
 .menu{
     height: 70px;
-    width: 50px;
+    width: 180px;
     display: flex;
     cursor: pointer;
 }
 
 .counter{
     margin: auto;
-    font-size: 25px;
+    font-size: 18px;
     color: red;
 }
