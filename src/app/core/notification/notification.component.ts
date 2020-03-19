@@ -11,7 +11,7 @@ import { move } from './notification.animations';
 })
 export class NotificationComponent implements OnInit {
   @Input() data: INotification;
-  
+
   constructor(
     private fs: FirestoreService
   ) { }
@@ -21,6 +21,11 @@ export class NotificationComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if (this.data.expires) {
+      setTimeout(() => {
+        this.fs.deleteDoc(this.data.id);
+      }, this.data.expires)
+    }
   }
 
 }
