@@ -1,27 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MenuService } from '../services/menu.service';
 import { FirestoreService } from '../services/firestore.service';
 import { INotification } from 'src/app/interfaces/notification.interface';
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.css']
 })
-export class NavigationComponent implements OnInit {
+export class NavigationComponent implements OnInit, OnDestroy {
   length: number = 0;
+  notifications: Observable<INotification[][]>;
+  subs: Subscription;
 
   constructor(
     private menuService: MenuService,
     private fs: FirestoreService
   ) {
-    fs.getNotifications().forEach(arr => {
-      this.length = this.filterNotifications(arr).length;
-    });
+    this.notifications = fs.getNotifications();
   }
 
-  filterNotifications(arr: any) {
+  private filterNotifications(arr: any) {
     return arr.filter(not => not.type !== 'bonus')
+  }
+
+  private calculateLength(arr: any) {
+      return this.length = this.filterNotifications(arr).length;
   }
 
   toggle() {
@@ -29,6 +34,11 @@ export class NavigationComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.subs = this.notifications.subscribe(this.calculateLength.bind(this));
+  }
+
+  ngOnDestroy(): void {
+    this.subs.unsubscribe();
   }
 
 }
