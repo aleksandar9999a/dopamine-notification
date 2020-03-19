@@ -18,7 +18,7 @@ export class ActionsComponent implements OnInit {
       type: 'text',
       title: 'Test notification',
       text: 'Test text notification',
-      expires: 5,
+      expires: 5000,
       time
     })
   }
