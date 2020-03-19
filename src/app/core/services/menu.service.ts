@@ -2,7 +2,7 @@ import { Injectable, EventEmitter, Output } from '@angular/core';
 
 @Injectable()
 export class MenuService { 
-    isOpen = false;
+    isOpen = true;
     @Output() state = new EventEmitter();
 
     toggle() {
