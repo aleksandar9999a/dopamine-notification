@@ -14,7 +14,7 @@ import { FirestoreService } from '../services/firestore.service';
 export class NotificationsComponent implements OnInit, OnDestroy {
   isOpen = false;
   subscriber: Subscription;
-  notifications: Observable<INotification[][]>;
+  notifications: Observable<INotification[]>;
 
   constructor(
     private menuService: MenuService,

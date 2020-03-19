@@ -5,7 +5,7 @@ import { INotification } from 'src/app/interfaces/notification.interface';
 
 @Injectable()
 export class FirestoreService {
-    collection: AngularFirestoreCollection<Array<INotification>>;
+    collection: AngularFirestoreCollection<INotification>;
 
     constructor(
         private afs: AngularFirestore

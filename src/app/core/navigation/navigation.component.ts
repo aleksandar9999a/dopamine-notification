@@ -11,7 +11,7 @@ import { Observable, Subscription } from 'rxjs';
 })
 export class NavigationComponent implements OnInit, OnDestroy {
   length: number = 0;
-  notifications: Observable<INotification[][]>;
+  notifications: Observable<INotification[]>;
   subs: Subscription;
 
   constructor(
@@ -21,11 +21,11 @@ export class NavigationComponent implements OnInit, OnDestroy {
     this.notifications = fs.getNotifications();
   }
 
-  private filterNotifications(arr: any) {
+  private filterNotifications(arr: INotification[]) {
     return arr.filter(not => not.type !== 'bonus')
   }
 
-  private calculateLength(arr: any) {
+  private calculateLength(arr: INotification[]) {
       return this.length = this.filterNotifications(arr).length;
   }
 

@@ -9,7 +9,7 @@ import { FirestoreService } from '../services/firestore.service';
 })
 export class NotificationComponent implements OnInit, OnDestroy {
   @Input() data: INotification;
-  interval: NodeJS.Timeout;
+  interval: any;
 
   constructor(
     private fs: FirestoreService
