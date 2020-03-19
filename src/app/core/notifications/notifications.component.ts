@@ -12,7 +12,7 @@ import { FirestoreService } from '../services/firestore.service';
   animations: [fade]
 })
 export class NotificationsComponent implements OnInit, OnDestroy {
-  isOpen = true;
+  isOpen = false;
   subscriber: Subscription;
   notifications: Observable<INotification[][]>;
 
