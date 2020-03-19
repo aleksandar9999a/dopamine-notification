@@ -18,11 +18,11 @@ export class FirestoreService {
     }
 
     deleteDoc(id: string) {
-        return this.collection.doc(id).delete();
+        return this.collection.doc(id).delete().catch(console.error);
     }
 
     addDoc(data: INotification) {
         data.id = this.afs.createId();
-        return this.collection.doc(data.id).set(data);
+        return this.collection.doc(data.id).set(data).catch(console.error);
     }
 }
