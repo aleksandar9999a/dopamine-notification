@@ -12,5 +12,5 @@
 ```bash
     npm install
 
-    npm serve
+    ng serve
 ```
